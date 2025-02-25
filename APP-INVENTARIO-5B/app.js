@@ -2,6 +2,7 @@ const express = require ('express');
 const mongoose = require ('mongoose');
 const bodyParser= require ('body-parser');
 const personaRoutes= require('./routes/persona.route');
+const productoRoutes= require('./routes/producto.route')
 
 const app = express();
 const PORT = 3000;
@@ -9,6 +10,7 @@ const PORT = 3000;
 app.use(bodyParser.json());
 
 app.use('/api/personas',personaRoutes);
+app.use('/api/productos', productoRoutes);
 
 //conexión a bd 
 mongoose.connect('mongodb+srv://20233tn144:ZwZ4TGJ78xeZZssc@angel.a4fin.mongodb.net/inventario-db?retryWrites=true&w=majority&appName=Angel',{ useNewUrlParser: true, useUnifiedTopology: true })
